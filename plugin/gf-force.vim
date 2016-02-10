@@ -6,7 +6,7 @@ let g:loaded_gf_force = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-function s:open_file(path)
+function! s:open_file(path) abort
   let parent = fnamemodify(a:path, ':h')
   if get(g:, 'gf_force_create_directory', 0) && !isdirectory(root)
     call mkdir(parent, 'p')
@@ -14,7 +14,7 @@ function s:open_file(path)
   edit `=a:path`
 endfunction
 
-function s:selected_text()
+function! s:selected_text() abort
   let save_reg = getreg('z')
   let save_type = getregtype('z')
   normal! gv"zy
