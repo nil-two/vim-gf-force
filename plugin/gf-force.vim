@@ -15,8 +15,9 @@ function s:selected_text()
   return text
 endfunction
 
-nnoremap gf :<C-u>e <cfile><cr>
-vnoremap gf :<C-u>e `=<SID>selected_text()`<cr>
+nnoremap <silent> <Plug>(gf-force) :<C-u>e <cfile><CR>
+vnoremap <silent> <Plug>(gf-force) :<C-u>e `=<SID>selected_text()`<CR>
+silent! map <unique> gf <Plug>(gf-force)
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
