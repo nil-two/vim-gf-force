@@ -7,6 +7,10 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! s:open_file(path) abort
+  if &modified
+    echom "gf-force: No write since last change (add ! to override)"
+    return
+  endif
   let parent = fnamemodify(a:path, ':h')
   if get(g:, 'gf_force_create_directory', 0) && !isdirectory(root)
     call mkdir(parent, 'p')
