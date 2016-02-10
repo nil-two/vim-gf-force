@@ -6,6 +6,10 @@ let g:loaded_gf_force = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+function s:open_file(path)
+  edit `=a:path`
+endfunction
+
 function s:selected_text()
   let save_reg = getreg('z')
   let save_type = getregtype('z')
@@ -15,8 +19,10 @@ function s:selected_text()
   return text
 endfunction
 
-nnoremap <silent> <Plug>(gf-force) :<C-u>e <cfile><CR>
-vnoremap <silent> <Plug>(gf-force) :<C-u>e `=<SID>selected_text()`<CR>
+nnoremap <silent> <Plug>(gf-force)
+\ :<C-u>call <SID>open_file(expand('<cfile>'))<CR>
+vnoremap <silent> <Plug>(gf-force)
+\ :<C-u>call <SID>open_file(<SID>selected_text())<CR>
 
 if !get(g:, 'gf_force_no_default_key_mappings', 0)
   silent! map <unique> gf <Plug>(gf-force)
