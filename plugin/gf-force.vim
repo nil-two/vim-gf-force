@@ -7,6 +7,10 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function s:open_file(path)
+  let parent = fnamemodify(a:path, ':h')
+  if get(g:, 'gf_force_create_directory', 0) && !isdirectory(root)
+    call mkdir(parent, 'p')
+  endif
   edit `=a:path`
 endfunction
 
