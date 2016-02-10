@@ -17,7 +17,10 @@ endfunction
 
 nnoremap <silent> <Plug>(gf-force) :<C-u>e <cfile><CR>
 vnoremap <silent> <Plug>(gf-force) :<C-u>e `=<SID>selected_text()`<CR>
-silent! map <unique> gf <Plug>(gf-force)
+
+if !get(g:, 'gf_force_no_default_key_mappings', 0)
+  silent! map <unique> gf <Plug>(gf-force)
+endif
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
