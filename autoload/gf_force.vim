@@ -1,6 +1,6 @@
 function! gf_force#open_file(path) abort
   if &modified
-    echom "gf-force: No write since last change (add ! to override)"
+    echom 'gf-force: No write since last change (add ! to override)'
     return
   endif
   let parent = fnamemodify(a:path, ':h')
