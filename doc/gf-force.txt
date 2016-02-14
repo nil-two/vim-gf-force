@@ -9,7 +9,6 @@ CONTENTS					*gf-force-contents*
 
 INTRODUCTION		|gf-force-introduction|
 INTERFACE		|gf-force-interface|
-  COMMANDS		  |gf-force-commands|
   KEY MAPPINGS		  |gf-force-key-mappings|
   VARIABLES		  |gf-force-variables|
 CHANGELOG		|gf-force-changelog|
