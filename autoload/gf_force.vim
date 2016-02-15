@@ -4,7 +4,7 @@ function! gf_force#open_file(path) abort
     return
   endif
   let parent = fnamemodify(a:path, ':h')
-  if get(g:, 'gf_force_create_directory', 0) && !isdirectory(root)
+  if get(g:, 'gf_force_create_directory', 0) && !isdirectory(parent)
     call mkdir(parent, 'p')
   endif
   edit `=a:path`
