@@ -3,9 +3,6 @@ if exists('g:loaded_gf_force')
 endif
 let g:loaded_gf_force = 1
 
-let s:save_cpo = &cpo
-set cpo&vim
-
 nnoremap <silent> <Plug>(gf-force)
 \ :<C-u>call gf_force#open_file(expand('<cfile>'))<CR>
 vnoremap <silent> <Plug>(gf-force)
@@ -14,6 +11,3 @@ vnoremap <silent> <Plug>(gf-force)
 if !get(g:, 'gf_force_no_default_key_mappings', 0)
   silent! map <unique> gf <Plug>(gf-force)
 endif
-
-let &cpo = s:save_cpo
-unlet s:save_cpo
