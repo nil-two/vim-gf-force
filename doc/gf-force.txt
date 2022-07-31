@@ -1,7 +1,7 @@
 *gf-force.txt*	Open file with gf even if file doesn't exist.
 
 Version: 0.1.0
-Author : kusabashira <kusabashira227@gmail.com>
+Author : nil2 <nil2@nil2.org>
 License: MIT License
 
 ==============================================================================
@@ -23,7 +23,7 @@ Requirements:
 - Vim 7.4 or later
 
 Latest version:
-https://github.com/kusabashira/vim-gf-force
+https://github.com/nil2nekoni/vim-gf-force
 
 
 ==============================================================================
